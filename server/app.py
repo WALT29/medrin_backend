@@ -1,15 +1,15 @@
 from server.config import app, init_extensions
-from routes.AuthRoutes import auth_bp
-from routes.UserRoutes import get_data_bp
-from routes.JobRoutes import job_bp
-from routes.AdminRoutes import admin_bp
-from routes.ApplicationRoutes import application_bp
-from routes.OrganisationRoutes import organisation_bp
-from routes.JobseekerRoutes import jobseeker_bp
-from routes.mpesa import mpesa_bp
-from routes.plansRoute import plans_bp
-from routes.paymentsRoute import payments_bp
-from routes.subscriptionRoutes import subscription_bp
+from server.routes.AuthRoutes import auth_bp
+from server.routes.UserRoutes import get_data_bp
+from server.routes.JobRoutes import job_bp
+from server.routes.AdminRoutes import admin_bp
+from server.routes.ApplicationRoutes import application_bp
+from server.routes.OrganisationRoutes import organisation_bp
+from server.routes.JobseekerRoutes import jobseeker_bp
+from server.routes.mpesa import mpesa_bp
+from server.routes.plansRoute import plans_bp
+from server.routes.paymentsRoute import payments_bp
+from server.routes.subscriptionRoutes import subscription_bp
 
 # Initialize extensions with the app
 init_extensions(app)
