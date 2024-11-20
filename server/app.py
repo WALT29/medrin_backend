@@ -1,4 +1,4 @@
-from config import app, init_extensions
+from .config import app, init_extensions
 from routes.AuthRoutes import auth_bp
 from routes.UserRoutes import get_data_bp
 from routes.JobRoutes import job_bp
