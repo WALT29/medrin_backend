@@ -1,7 +1,7 @@
 from uuid import UUID
 from flask import Blueprint, request, jsonify
 from models import ApplicationStatusEnum, db, Application, JobSeeker, Job, shortlisted_applications
-from config import send_email
+from server.config import send_email
 
 application_bp = Blueprint('application', __name__)
 

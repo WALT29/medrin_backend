@@ -4,7 +4,7 @@ import bcrypt
 
 from flask import Blueprint, request, jsonify, session
 from flask_jwt_extended import create_access_token, get_jwt, jwt_required
-from config import BLACKLIST, db,  send_email
+from server.config import BLACKLIST, db,  send_email
 from models import User, RoleEnum
 from datetime import datetime, timedelta
 
