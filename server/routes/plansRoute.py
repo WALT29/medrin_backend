@@ -1,6 +1,6 @@
 from flask import Blueprint,request,make_response
 from flask_restful import Api,Resource
-from models import db,Plans
+from server.models import db,Plans
 import uuid
 from uuid import UUID
 

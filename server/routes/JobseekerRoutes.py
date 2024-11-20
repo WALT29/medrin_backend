@@ -2,9 +2,9 @@ from datetime import datetime
 from uuid import UUID
 
 import cloudinary
-from config import db
+from server.config import db
 from flask import Blueprint, jsonify, request, session
-from models import Application, ApplicationStatusEnum, Job, JobSeeker
+from server.models import Application, ApplicationStatusEnum, Job, JobSeeker
 
 jobseeker_bp = Blueprint('jobseeker', __name__)
 

@@ -2,7 +2,7 @@ from uuid import UUID
 import cloudinary
 from flask import Blueprint, jsonify, request
 from server.config import db
-from models import Job, Organisation, User
+from server.models import Job, Organisation, User
 
 organisation_bp = Blueprint('organisation', __name__)
 

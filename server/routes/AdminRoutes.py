@@ -1,6 +1,6 @@
 from uuid import UUID
 from flask import Blueprint, request, jsonify
-from models import Organisation, User, db, Application, JobSeeker, Job
+from server.models import Organisation, User, db, Application, JobSeeker, Job
 from datetime import datetime
 from server.config import send_email
 from sqlalchemy.exc import SQLAlchemyError
