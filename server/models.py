@@ -6,7 +6,7 @@ from sqlalchemy.orm import relationship
 from sqlalchemy_serializer import SerializerMixin
 from datetime import datetime,timezone,timedelta
 import uuid
-from config import db
+from server.config import db
 import enum
 
 # Enums
