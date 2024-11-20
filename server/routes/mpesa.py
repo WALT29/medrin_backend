@@ -4,7 +4,7 @@ from datetime import datetime
 from flask import Blueprint,request,make_response
 from flask_restful import Api,Resource
 from dotenv import load_dotenv
-from server.models import db,User,Plans,Subscription,Payment,Organisation
+from models import db,User,Plans,Subscription,Payment,Organisation
 from uuid import UUID
 import os
 

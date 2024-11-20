@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify
-from server.middlewares.auth import token_required
+from middlewares.auth import token_required
 
 get_data_bp = Blueprint('getdata', __name__)
 

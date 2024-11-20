@@ -4,8 +4,8 @@ import bcrypt
 
 from flask import Blueprint, request, jsonify, session
 from flask_jwt_extended import create_access_token, get_jwt, jwt_required
-from server.config import BLACKLIST, db,  send_email
-from server.models import User, RoleEnum
+from config import BLACKLIST, db,  send_email
+from models import User, RoleEnum
 from datetime import datetime, timedelta
 
 auth_bp = Blueprint('signup', __name__)

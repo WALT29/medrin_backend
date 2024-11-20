@@ -1,6 +1,6 @@
 from flask import Blueprint,request,make_response
 from flask_restful import Api,Resource
-from server.models import db,Payment
+from models import db,Payment
 
 payments_bp=Blueprint('payments_bp',__name__,url_prefix='/payments_route')
 api=Api(payments_bp)

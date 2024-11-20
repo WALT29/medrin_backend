@@ -1,8 +1,8 @@
 from uuid import UUID
 from flask import Blueprint, request, jsonify
-from server.models import Organisation, User, db, Application, JobSeeker, Job
+from models import Organisation, User, db, Application, JobSeeker, Job
 from datetime import datetime
-from server.config import send_email
+from config import send_email
 from sqlalchemy.exc import SQLAlchemyError
 
 admin_bp = Blueprint('admin', __name__)

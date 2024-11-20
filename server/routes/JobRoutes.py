@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from datetime import datetime
-from server.models import Job, Organisation, JobRequirement, JobResponsibility, JobTypeEnum, JobLevelEnum, IndustryEnum, JobBenefits, db, shortlisted_applications
+from models import Job, Organisation, JobRequirement, JobResponsibility, JobTypeEnum, JobLevelEnum, IndustryEnum, JobBenefits, db, shortlisted_applications
 
 job_bp = Blueprint('job', __name__)
 
