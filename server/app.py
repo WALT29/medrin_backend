@@ -10,7 +10,7 @@ from routes.mpesa import mpesa_bp
 from routes.plansRoute import plans_bp
 from routes.paymentsRoute import payments_bp
 from routes.subscriptionRoutes import subscription_bp
-
+import os
 # Initialize extensions with the app
 init_extensions(app)
 app.register_blueprint(auth_bp)
@@ -36,4 +36,5 @@ def index():
 
 # Running the app
 if __name__ == '__main__':
-    app.run(port=5555, debug=True)
+    port = int(os.environ.get("PORT", 5555))
+    app.run(host="0.0.0.0", port=port, debug=True)
