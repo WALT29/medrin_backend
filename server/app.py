@@ -11,6 +11,7 @@ from routes.plansRoute import plans_bp
 from routes.paymentsRoute import payments_bp
 from routes.subscriptionRoutes import subscription_bp
 import os
+
 # Initialize extensions with the app
 init_extensions(app)
 app.register_blueprint(auth_bp)
@@ -24,9 +25,6 @@ app.register_blueprint(mpesa_bp)
 app.register_blueprint(plans_bp)
 app.register_blueprint(payments_bp)
 app.register_blueprint(subscription_bp)
-
-
-
 
 
 # API endpoint

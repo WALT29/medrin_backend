@@ -79,6 +79,7 @@ class Payments(Resource):
         #here I validate the plan and user 
         user = User.query.filter_by(id=user_id_u).first()
         plan = Plans.query.filter_by(id=plan_id_u).first()
+        print(plan.name)
         
         if not user:
             return make_response({
@@ -145,7 +146,8 @@ class Payment_result(Resource):
         checkout_request_id = callback_data['Body']['stkCallback']['CheckoutRequestID']
         result_code = callback_data['Body']['stkCallback']['ResultCode']
         
-        payment = Payment.query.filter_by(transaction_reference=checkout_request_id).first()
+        payment= Payment.query.filter_by(transaction_reference=checkout_request_id).first()
+        print("trans:",payment)
         
         if not payment:
             return make_response({
@@ -157,7 +159,7 @@ class Payment_result(Resource):
             db.session.commit()
             
             #creating a new subscription
-            new_subscription = Subscription(organization_id=payment.organization_id, plan_id=payment.plan_id)
+            new_subscription = Subscription(organization_id=payment.organisation_id, plan_id=payment.plan_id)
             db.session.add(new_subscription)
             db.session.commit()
             
@@ -168,21 +170,21 @@ class Payment_result(Resource):
             payment.payment_status = "failed"
             db.session.commit()
             
-            return make_response({"message": "Payment failed"}, 400)
+            return make_response({"message": "Payment failed"}, 200)
         
-# class Payment_status(Resource):
-#     def get(self, checkout_request_id):
-#         payment = Payment.query.filter_by(transaction_reference=checkout_request_id).first()
-#         if payment:
-#             if payment.payment_status == "success":
-#                 return {"message": "Payment successful",}, 200
-#             elif payment.payment_status == "failed":
-#                 return {"message": "Payment failed"}, 400
-#             else:
-#                 return {"message": "Payment pending"}, 202
-#         return {"error": "Payment not found"}, 404
+class Payment_status(Resource):
+    def get(self, checkout_request_id):
+        payment = Payment.query.filter_by(transaction_reference=checkout_request_id).first()
+        if payment:
+            if payment.payment_status == "success":
+                return {"message": "Payment successful",}, 200
+            elif payment.payment_status == "failed":
+                return {"message": "Payment failed"}, 200
+            else:
+                return {"message": "Payment pending"}, 202
+        return {"error": "Payment not found"}, 404
         
         
 api.add_resource(Payments,'/make_payment')   
 api.add_resource(Payment_result,'/payment_result')
-# api.add_resource(Payment_status, '/payment_status/<string:checkout_request_id>')        
+api.add_resource(Payment_status, '/payment_status/<string:checkout_request_id>')        
