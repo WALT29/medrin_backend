@@ -18,6 +18,7 @@ pyotp = "*"
 sqlalchemy-serializer = "*"
 requests = "*"
 python-dotenv = "*"
+bcc = "*"
 
 [dev-packages]
 
