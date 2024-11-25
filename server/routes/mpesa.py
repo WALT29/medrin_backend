@@ -116,7 +116,7 @@ class Payments(Resource):
             "PartyA": 254790453418,
             "PartyB": 174379,
             "PhoneNumber": formatted_phone_number,
-            "CallBackURL": "https://major-aardvark-secondly.ngrok-free.app/mpesa/payment_result",
+            "CallBackURL": "https://medrin.nullchemy.com/mpesa/payment_result",
             "AccountReference": "Medrin",
             "TransactionDesc": f'Payment for {plan.name}'
          } 

@@ -14,9 +14,6 @@ class Subscriptions(Resource):
             return make_response({
                 "error":"No subscription is found"
             },404)
-        
-       
-        
         return make_response(subscriptions,200)
     
     def post(self):
